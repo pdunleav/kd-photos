@@ -1,11 +1,12 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!
+
   def new
     new_photo
   end
 
   def create
-    new_photo
+    new_photo(photo_params)
     if @photo.save
       redirect_to root_path
     else
@@ -15,8 +16,8 @@ class PhotosController < ApplicationController
 
   private
 
-  def new_photo
-    @photo = Photo.new(photo_params)
+  def new_photo(attributes = {})
+    @photo = Photo.new
   end
 
   def photo_params
