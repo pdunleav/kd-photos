@@ -9,7 +9,8 @@ class CustomDeviseFailure < Devise::FailureApp
       http_auth
     else
       redirect
-      flash[:error] = 'You are not Kevin!'
+      flash.discard
+      flash[:danger] = 'You are not signed in yet Kevin! 😱'
     end
   end
 end
