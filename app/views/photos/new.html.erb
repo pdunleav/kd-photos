@@ -1,10 +1,7 @@
-<%= form_for @photo do |f| %>
-
-  <%= f.text_field :title %>
-  <%= f.text_field :description %>
-  <%= f.text_field :image %>
+<%= simple_form_for @photo do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :image %>
+  <%= f.input :image_cache, as: :hidden %>
   <%= f.submit %>
-
-
 <% end %>
-

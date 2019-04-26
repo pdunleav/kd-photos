@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     if @photo.save
       redirect_to root_path
+      flash[:success] = "Photo with title \"#{@photo.title}\" succesfully created! 😁"
     else
       render :new
     end
@@ -17,6 +18,6 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :image, :description)
+    params.require(:photo).permit(:title, :description, :image)
   end
 end
