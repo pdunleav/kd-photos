@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'mail_form'
 
 # Front-end
 gem 'font-awesome-sass', '~> 5.6.1'
