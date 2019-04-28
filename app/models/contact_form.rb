@@ -6,7 +6,7 @@ class ContactForm < MailForm::Base
   def headers
     {
       subject: 'My Contact Form',
-      to: 'dunleavy.phelim@gmail.com',
+      to: ENV['DELIVER_TO_EMAIL'],
       from: %("#{name}" <#{email}>)
     }
   end
